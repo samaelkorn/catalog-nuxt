@@ -1,4 +1,5 @@
 <script lang="tsx" setup>
+useHead({ title: "Login - Samael" })
 definePageMeta({
     layout: 'login'
 })

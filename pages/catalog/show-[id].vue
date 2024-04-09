@@ -1,8 +1,9 @@
 <script lang="tsx" setup>
 useHead({ title: "Detail - Samael" })
+const route = useRoute()
 
 const InlineComponent = () => {
-  return <div>Детальная</div>
+  return <div>Детальная {route.params.id}</div>
 }
 </script>
 
