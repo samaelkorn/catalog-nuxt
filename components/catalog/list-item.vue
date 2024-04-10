@@ -1,14 +1,16 @@
 <script lang="tsx" setup>
-const props = defineProps({
-    index: Number,
+interface TItem {
+    index: number
     item: {
-        id: Number,
-        name: String,
-        status: String,
-        price: Number,
-        category: String,
+        id: number
+        name: string
+        status: string
+        image: string
+        category: string
+        price: number
     }
-})
+}
+const { index, item } = defineProps<TItem>()
 </script>
 
 <template>
@@ -28,7 +30,7 @@ const props = defineProps({
             <div class="flex flex-column md:align-items-end gap-5">
                 <span class="text-xl font-semibold text-900">${{ item.price }}</span>
                 <div class="flex flex-row-reverse md:flex-row gap-2">
-                    <NuxtLink :to="`catalog/show-${item.id}`">
+                    <NuxtLink :to="`catalog/${item.id}`">
                         <Button icon="pi pi-shopping-cart" label="Подробнее"
                             class="flex-auto md:flex-initial white-space-nowrap"></Button>
                     </NuxtLink>

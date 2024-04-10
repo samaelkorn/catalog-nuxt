@@ -1,23 +1,3 @@
-<script lang="tsx" setup>
-useHead({ title: "Login - Samael" })
-definePageMeta({
-    layout: 'login'
-})
-
-const supabase = useSupabaseClient()
-const email = ref('')
-const password = ref('')
-
-const signInWithOAuth = () => {
-    supabase.auth.signInWithPassword({
-        email: email.value,
-        password: password.value,
-    }).then(() => {
-        navigateTo({ path: '/admin' })
-    })
-}
-</script>
-
 <template>
     <div
         class="surface-ground flex align-items-center justify-content-center min-h-screen min-w-screen overflow-hidden">
@@ -45,14 +25,23 @@ const signInWithOAuth = () => {
     </div>
 </template>
 
-<style scoped>
-.pi-eye {
-    transform: scale(1.6);
-    margin-right: 1rem;
-}
 
-.pi-eye-slash {
-    transform: scale(1.6);
-    margin-right: 1rem;
+<script lang="tsx" setup>
+useHead({ title: "Login - Samael" })
+definePageMeta({
+    layout: 'login'
+})
+
+const supabase = useSupabaseClient()
+const email = ref('')
+const password = ref('')
+
+const signInWithOAuth = () => {
+    supabase.auth.signInWithPassword({
+        email: email.value,
+        password: password.value,
+    }).then(() => {
+        navigateTo({ path: '/admin' })
+    })
 }
-</style>
+</script>

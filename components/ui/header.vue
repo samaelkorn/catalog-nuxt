@@ -1,16 +1,19 @@
-<script lang="tsx" setup>
-const props = defineProps({
-  title: String
-})
-</script>
-
 <template>
   <div class="layout-topbar">
     <router-link to="/" class="layout-topbar-logo">
       <span>{{ title }}</span>
     </router-link>
+    <div class="layout-topbar-menu">
+      <slot />
+    </div>
   </div>
 </template>
+
+<script lang="tsx" setup>
+const props = defineProps({
+  title: String
+})
+</script>
 
 <style lang="scss">
 .layout-topbar {
@@ -43,6 +46,13 @@ const props = defineProps({
       transition: box-shadow .2s;
       box-shadow: var(--focus-ring);
     }
+  }
+
+  .layout-topbar-menu {
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+    display: flex;
   }
 }
 </style>

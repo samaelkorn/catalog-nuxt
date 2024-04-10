@@ -1,7 +1,3 @@
-<script lang="tsx" setup>
-import Header from '@/components/ui/header.vue'
-</script>
-
 <template>
     <div class="layout-wrapper">
         <Header title="Catalog" />
@@ -12,6 +8,10 @@ import Header from '@/components/ui/header.vue'
         </div>
     </div>
 </template>
+
+<script lang="tsx" setup>
+import Header from '@/components/ui/header.vue'
+</script>
 
 <style lang="scss">
 .layout-wrapper {

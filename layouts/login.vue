@@ -1,12 +1,12 @@
-<script lang="tsx" setup>
-
-</script>
-
 <template>
     <div>
         <slot />
     </div>
 </template>
+
+<script lang="tsx" setup>
+
+</script>
 
 <style lang="scss">
 .layout-wrapper {

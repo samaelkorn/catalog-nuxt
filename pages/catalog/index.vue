@@ -1,22 +1,8 @@
-<script lang="tsx" setup>
-import ListItem from '@/components/catalog/list-item.vue'
-import GridItem from '@/components/catalog/grid-item.vue'
-
-useHead({ title: "Catalog - Samael" })
-const layout = ref<'grid' | 'list'>('grid')
-
-const { data } = await useAsyncData(
-  'products',
-  () => $fetch('/api/products')
-)
-</script>
-
 <template>
   <div class="grid">
     <div class="col-12">
       <div class="card">
-        <h5>Catalog</h5>
-        <DataView :value="data?.products" :layout="layout" dataKey="id">
+        <DataView :value="data?.products ?? []" :layout="layout" dataKey="id">
           <template #header>
             <div class="grid grid-nogutter">
               <div class="col-6 text-right">
@@ -43,3 +29,16 @@ const { data } = await useAsyncData(
     </div>
   </div>
 </template>
+ƒ
+<script lang="tsx" setup>
+import ListItem from '@/components/catalog/list-item.vue'
+import GridItem from '@/components/catalog/grid-item.vue'
+
+useHead({ title: "Catalog - Samael" })
+const layout = ref<'grid' | 'list'>('grid')
+
+const { data } = await useAsyncData(
+  'products',
+  () => $fetch('/api/products')
+)
+</script>

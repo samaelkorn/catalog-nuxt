@@ -1,3 +1,7 @@
+<template>
+  <InlineComponent />
+</template>
+
 <script lang="tsx" setup>
 useHead({ title: "Detail - Samael" })
 const route = useRoute()
@@ -7,6 +11,4 @@ const InlineComponent = () => {
 }
 </script>
 
-<template>
-  <InlineComponent />
-</template>
+

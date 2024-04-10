@@ -1,10 +1,8 @@
-<script lang="tsx" setup>
-import Header from '@/components/ui/header.vue'
-</script>
-
 <template>
     <div class="layout-wrapper">
-        <Header title="Admin" />
+        <Header title="Admin">
+            <Button label="Выйти" @click="signOut"></Button>
+        </Header>
         <div class="layout-main-container">
             <div class="layout-main">
                 <slot />
@@ -12,6 +10,18 @@ import Header from '@/components/ui/header.vue'
         </div>
     </div>
 </template>
+
+<script lang="tsx" setup>
+import Header from '@/components/ui/header.vue'
+
+const supabase = useSupabaseClient()
+const signOut = () => {
+    supabase.auth.signOut()
+        .then(() => {
+            navigateTo({ path: '/login' })
+        })
+}
+</script>
 
 <style lang="scss">
 .layout-wrapper {
